@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Encriptador</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+
+        
+
+    </head>
+    
+    <body>
+        <header>
+            
+            <p class="titulo"> ALURA CHALLENGE: ENCRIPTADOR</p>
+        </header>
+
+        <main>
+           
+            <section id="izquierda">
+                <div class="cuadroConsulta">
+                    <form class="formulario">
+                        <div>
+                            <label for="ingresarTexto">
+                                <textarea id="ingresarTexto" pattern="[A-Za-z0-9]+" class="inputStyle" placeholder="Ingrese el texto aquí" required autofocus></textarea>
+                            </label><br>
+                            <img  class="advertencia" src="advertencia.png"><p class="advertencia">No encripta/desencripta letras mayúsculas y ni acentuadas</p>
+                        </div>
+                        <div class="botones" >
+                            <label for="botonEncriptar" >
+                                <input type="button" id="botonEncriptar" value="   ENCRIPTAR   " class="buttonStyle">
+                            </label>
+                            <label for="botonDesencriptar">
+                                <input type="button" id="botonDesencriptar" value="DESENCRIPTAR" class="buttonStyle">
+                            </label>
+                        </div>
+                    </form>      
+                </div>
+            </section>
+                
+            <section id="derecha">
+                <div  class="cuadroRespuesta">
+                    
+                    <div class="found">
+                        <label for="resultado">
+                            <textarea  rows="1" id="resultado" class="outputStyle" type="text" readonly></textarea>
+                        </label>
+                        <label for="botonCopiar">
+                            <input type="button" id="botonCopiar" value="Copiar" class="buttonStyle buttonCopiar">
+                        </label>   
+                    </div>   
+                    
+                    <div class="notFound">
+                        <img class="imagenBusqueda" src="search.png" >
+                        <p class="notFoundText">Ningún mensaje fue encontrado<br><br>
+                        Ingresa el texto que deseas encriptar o desencriptar</p> 
+                    </div>
+                        
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Desarrolado por Sofi Medina</p>
+            <a href="https://github.com/SofiMedinaGH" target="_blank"><img src="github-logo.png" class="logosFooter" width="30px" height="30px"></a>
+            <a href="https://www.linkedin.com/in/sofiamicaelamedina/" target="_blank"><img src="linkedin-logo.png" class="logosFooter" width="30px" height="30px">
+            </footer></a> 
+    </body>
+
+    <!--Aquí comienza Javascript-->
+
+    <script>
+
+        
+                 
+        
+
+        function encriptarMensaje() {
+            
+
+            let mensajeEntrada = document.querySelector("textarea[id='ingresarTexto']").value;
+
+            let contador = 0;
+
+            let mensajeSalida = "";
+
+            
+
+            while(contador < mensajeEntrada.length) {
+                
+        
+                if (mensajeEntrada[contador] == "a" ||
+                    mensajeEntrada[contador] == "e" ||
+                    mensajeEntrada[contador] == "i" ||
+                    mensajeEntrada[contador] == "o" ||
+                     mensajeEntrada[contador] == "u") {
+
+                    switch (mensajeEntrada[contador]) {
+                        case "a":
+                            mensajeSalida = mensajeSalida + "ai";
+                            contador++;
+                            break;
+                        case "e":
+                            mensajeSalida = mensajeSalida + "enter";
+                            contador++;
+                            break;
+                        case "i":
+                            mensajeSalida = mensajeSalida + "imes";
+                            contador++;
+                            break;
+                        case "o":
+                            mensajeSalida = mensajeSalida + "ober";
+                            contador++;
+                            break;
+                        case "u":
+                            mensajeSalida = mensajeSalida + "ufat";
+                            contador++;
+                            break;
+                    }
+                } 
+                    else {
+                    mensajeSalida = mensajeSalida + mensajeEntrada[contador];
+                    contador++;
+                }
+            }
+            let notFound = document.querySelector("div[class='notFound']");
+            notFound.style.visibility= "hidden"; 
+            document.querySelector("textarea[id='resultado']").value = mensajeSalida;
+        } 
+
+
+        function desencriptarMensaje() {
+
+            let mensajeEntrada = document.querySelector("textarea[id='ingresarTexto']").value;
+
+            let contador = 0;
+
+            let mensajeSalida = "";
+
+
+            while(contador < mensajeEntrada.length) {
+            
+
+                if (mensajeEntrada[contador] == "a" ||
+                    mensajeEntrada[contador] == "e" ||
+                    mensajeEntrada[contador] == "i" ||
+                    mensajeEntrada[contador] == "o" ||
+                    mensajeEntrada[contador] == "u") {
+
+                    switch (mensajeEntrada[contador]) {
+                        case "a":
+                            mensajeSalida = mensajeSalida + "a";
+                            contador =contador+2;
+                            break;
+                        case "e":
+                            mensajeSalida = mensajeSalida + "e";
+                            contador =contador+5;
+                        break;
+                        case "i":
+                            mensajeSalida = mensajeSalida + "i";
+                            contador =contador+4;
+                            break;
+                        case "o":
+                            mensajeSalida = mensajeSalida + "o";
+                            contador =contador+4;
+                            break;
+                        case "u":
+                            mensajeSalida = mensajeSalida + "u";
+                            contador = contador+5;
+                            break;
+                    }
+                } 
+                    else {
+                    mensajeSalida = mensajeSalida + mensajeEntrada[contador];
+                    contador++;
+                }
+            }
+            let notFound = document.querySelector("div[class='notFound']");
+            notFound.style.visibility= "hidden"; 
+            document.querySelector("textarea[id='resultado']").value = mensajeSalida; 
+        } 
+        
+        
+
+        function copiarMensaje() {
+            let resultado = document.querySelector("textarea[id='resultado']"); 
+
+            resultado.select();
+            resultado.setSelectionRange(0,9999);
+
+            document.execCommand("copy");
+        }
+
+        botonCopiar.onclick = copiarMensaje;                  
+        botonEncriptar.onclick = encriptarMensaje;
+        botonDesencriptar.onclick = desencriptarMensaje;
+
+        
+ 
+    </script>
+</html>
+
+
+
+ 

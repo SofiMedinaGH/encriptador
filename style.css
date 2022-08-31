@@ -1,0 +1,323 @@
+body {
+    width: 100%;
+    height:100vh;
+    background: #FAE5DF;
+    font-family: 'Nunito', sans-serif; 
+    font-weight: bold;
+    text-align: center; 
+    overflow: hidden;
+}
+header {
+    height: 10%;
+    
+}
+
+.titulo {
+    font-size: 200%;
+    color:#141850;
+    padding-top: 2em;
+    justify-content: baseline;
+    font-family: 'Roboto Slab', serif;
+    
+    
+}
+
+
+main {
+    display: grid;
+    height: 80%;
+    grid-template-columns: 55% 45%;
+    grid-template-areas:
+    "izquierda derecha";
+}
+
+#izquierda {
+    grid-area: izquierda;
+    width: 100%;
+    height: 100%;
+}
+
+.cuadroConsulta {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;  
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width:100%;
+    height: 100%; 
+}
+
+
+
+.inputStyle {
+    margin: auto;
+    width: 90%;
+    height: 300%;
+    font-size: 150%;
+    font-family: 'Roboto', sans-serif;
+    color: #141850;
+    border: none;
+    outline: none;
+    resize: none;
+    
+}
+
+.advertencia {
+    display: inline-block;
+    color: #67808E;
+    margin-left: 5px;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.buttonStyle {
+    background: #303179;
+    font-family: 'Roboto Slab', sans-serif;
+    border: none;
+    color: white;
+    border-radius: 5%;
+    font-weight: bold;
+    font-size: 150%;
+    letter-spacing: 2px;
+    padding: 1em;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column; 
+    margin: auto; 
+}
+
+
+.buttonStyle:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    
+}
+
+.buttonStyle:active {
+    background-color: #141850;
+    
+}    
+     
+
+/*Aquí comienza el CSS de la parte derecha*/
+
+#derecha {
+    grid-area: derecha;
+    display: flex;
+    width: 100%; 
+}
+
+.cuadroRespuesta {
+    background: #fefefe;
+    border-radius: 5%;
+    height:85%;
+    width:100%;
+    margin: auto 10%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;  
+}
+
+
+
+.found {
+    display: flex;
+    flex-direction: column;
+    margin: 5% auto;
+    justify-content: space-around;
+    width:100%;
+    height: 100%;
+}
+
+
+
+
+.outputStyle {
+    margin: 0 auto;
+    width: 85%;
+    height: 200%;
+    font-size: 150%;
+    font-family: 'Roboto', sans-serif;
+    color: #141850;
+    border: none;
+    outline: none;
+    word-break: keep-all;
+    vertical-align: top;
+    background: #fefefe;
+    resize: none;
+    text-align: center;
+}
+
+.buttonCopiar {
+    margin-top: 15%;
+    justify-content: baseline;
+}
+
+
+.notFound {
+    z-index: 100;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-around;
+    width: 36%;
+    height: 60%;
+    border-radius: 5%;
+    background: #fefefe;
+}
+
+
+
+
+.imagenBusqueda {
+    width :50%;
+    height: auto;
+    margin: 0 auto;
+    color:#141850;
+    
+}   
+
+
+
+footer {
+    
+    margin: auto;
+    background: #141850;
+    width: 100%;
+    height: 10%;
+    color: #FAE5DF;
+    padding-top: 2em;
+    text-align:center;
+}
+
+.logosFooter {
+    padding: 2px;
+    padding-top: 5px;
+    
+}
+
+/*Media query para tablets*/
+
+@media screen and (max-width: 768px) {
+ 
+    main {
+        display: flex;
+        flex-direction: column;  
+    }
+
+    #izquierda, #derecha {
+       
+        margin: 0 auto;
+        height: 50%;
+    }
+    .botones {
+        margin-top: 0;
+    }
+
+    .inputStyle{
+        height: 300%;
+        width: 100%;
+    }
+
+    .cuadroRespuesta{
+        
+        margin-bottom: 30%;
+        height: 60%;
+        box-sizing: content-box;
+
+    }
+    
+    .notFound {
+        display: flex;
+        flex-direction: row;
+        width:70%;
+        height: 20%;
+        margin: 0 auto;
+        text-align: center;
+        vertical-align: middle;
+        box-sizing: content-box;
+    }
+
+    .imagenBusqueda {
+        margin-left: 15%;
+        margin-top: 5%;
+        
+    }
+    .notFoundText {
+        margin-top: 15%;
+        margin-bottom: -10%;
+       
+    }
+
+    .outputStyle {
+        
+        margin: 0 auto;
+        margin-top: 10%;
+       
+    }
+    .buttonCopiar {
+        margin-top: 40%;
+    }
+
+}
+
+/*Media query para celulares*/
+
+@media screen and (max-width: 375px) {
+    
+    body {
+        overflow: scroll;
+    }
+
+    .titulo {
+        padding-top: 1em;
+    }
+
+    .botones {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40%;
+    }
+
+    .inputStyle {
+        height: 200%;
+    }
+   
+    .buttonStyle {
+        margin: 8px;
+        margin-left: 20px;
+        font-size: 100%;
+        padding: 1em 25%;
+        width: 90%;
+        display: flex;
+        
+
+    
+    
+    
+
+    }
+    
+    .notFound {
+        margin-top: 8%;
+        width: 80%;
+    }
+
+    .imagenBusqueda {
+        display: none;
+    }
+
+    .inputStyle {
+        margin-top: 20px;
+    }
+}
