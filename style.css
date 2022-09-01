@@ -273,7 +273,7 @@ footer {
 
 /*Media query para celulares*/
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 500px) {
     
     body {
         overflow: scroll;
@@ -300,12 +300,6 @@ footer {
         padding: 1em 25%;
         width: 90%;
         display: flex;
-        
-
-    
-    
-    
-
     }
     
     .notFound {
