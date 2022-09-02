@@ -313,7 +313,7 @@ footer {
     }
 
     main {
-        display: inline-block;
+        display: block;
     }
 
     .titulo {
@@ -325,13 +325,12 @@ footer {
     .botones {
         display: flex;
         flex-direction: column;
-        margin-top: 40%;
+        margin-top: 20%;
     }
 
     
     .inputStyle {
         margin: auto;
-        margin-top: -15% ;
         width: 80%;
         height: 100%;
         font-size: 100%;
@@ -350,16 +349,43 @@ footer {
         display: flex;
     }
     
-    .notFound {
-        margin-top: 8%;
+
+    .cuadroRespuesta{
         width: 80%;
+        height: 40%;
+        margin: 0 auto;
+       
     }
+
+    .outputStyle {
+        margin-top: 40%;
+        height: 40%;
+    }
+    .notFound {
+        
+        width: 90%;
+        height: 150px;
+        justify-content: center;
+        
+    }
+
+    
 
     .imagenBusqueda {
         display: none;
     }
 
-    .inputStyle {
-        margin-top: 20px;
+    .notFoundText {
+        margin-top: 10%;  
     }
+
+    .buttonCopiar {
+        margin-top: 60%;
+    }
+
+    footer {
+        width: 110%;
+        display: flex;
+    }
+
 }
