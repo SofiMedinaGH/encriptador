@@ -211,58 +211,91 @@ footer {
 @media screen and (max-width: 768px) {
  
     main {
-        display: flex;
-        flex-direction: column;  
+        display: inline-block;
+        
     }
 
     #izquierda, #derecha {
-       
-        margin: 0 auto;
         height: 50%;
+        
     }
-    .botones {
-        margin-top: 0;
+    
+    #derecha {
+        grid-area: derecha;
+        display: inline-block;
+        width: 100%; 
+        
+    }
+    
+    .cuadroConsulta {
+        display: inline-block;
+        width: 100%;
+        
+        margin: 0 auto;  
     }
 
     .inputStyle{
-        height: 300%;
+        height: 90%;
         width: 100%;
+        margin: 0 auto;
+        margin-top: 10%;
+        font-size: 130%;
+        
     }
 
-    .cuadroRespuesta{
-        
-        margin-bottom: 30%;
-        height: 60%;
-        box-sizing: content-box;
+    .botones {
+        margin-top: 5%;
+    }
 
+    .buttonStyle {
+        background: #303179;
+        font-family: 'Roboto Slab', sans-serif;
+        border: none;
+        color: white;
+        border-radius: 5%;
+        font-weight: bold;
+        font-size: 100%;
+        letter-spacing: 2px;
+        padding: 1em;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column; 
+        margin: auto; 
+    }
+    
+
+    .cuadroRespuesta{
+        box-sizing: border-box;
+        /*width: 100%;*/
+        margin-bottom: 30%;
+        margin-left: 0;
+        height: 50%;
+        box-sizing: content-box;
+        border-radius: 5%;
+        display: flex;
     }
     
     .notFound {
         display: flex;
-        flex-direction: row;
-        width:70%;
+        width:60%;
         height: 20%;
-        margin: 0 auto;
         text-align: center;
-        vertical-align: middle;
-        box-sizing: content-box;
+        justify-content: center;
+        margin: 0 auto; 
     }
 
     .imagenBusqueda {
-        margin-left: 15%;
-        margin-top: 5%;
-        
+        visibility: hidden;
     }
+
     .notFoundText {
-        margin-top: 15%;
-        margin-bottom: -10%;
-       
+        margin-top: -45%;  
     }
 
     .outputStyle {
-        
-        margin: 0 auto;
+        margin:  auto;
         margin-top: 10%;
+        
        
     }
     .buttonCopiar {
@@ -273,14 +306,20 @@ footer {
 
 /*Media query para celulares*/
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 375px) {
     
     body {
         overflow: scroll;
     }
 
+    main {
+        display: inline-block;
+    }
+
     .titulo {
+        font-size: 150%;
         padding-top: 1em;
+        padding-bottom: 1em;
     }
 
     .botones {
@@ -289,10 +328,19 @@ footer {
         margin-top: 40%;
     }
 
+    
     .inputStyle {
-        height: 200%;
+        margin: auto;
+        margin-top: -15% ;
+        width: 80%;
+        height: 100%;
+        font-size: 100%;
     }
-   
+
+    .advertencia:first {
+        margin-top: 15%;
+    }
+
     .buttonStyle {
         margin: 8px;
         margin-left: 20px;
