@@ -133,9 +133,11 @@
                     contador++;
                 }
             }
-            let notFound = document.querySelector("div[class='notFound']");
-            notFound.style.visibility= "hidden"; 
+            let found = document.querySelector("div[class='found']");
+            found.style.display= "flex"; 
             document.querySelector("textarea[id='resultado']").value = mensajeSalida;
+            let notFound = document.querySelector("div[class='notFound']");
+            notFound.style.display="none"
         } 
 
 
@@ -185,9 +187,10 @@
                     contador++;
                 }
             }
-            let notFound = document.querySelector("div[class='notFound']");
-            notFound.style.visibility= "hidden"; 
-            document.querySelector("textarea[id='resultado']").value = mensajeSalida; 
+            let found = document.querySelector("div[class='found']");
+            found.style.display= "flex";
+            
+             document.querySelector("textarea[id='resultado']").value = mensajeSalida; 
         } 
         
         
