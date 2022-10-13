@@ -164,7 +164,7 @@ main {
 .outputStyle {
     margin: 0 auto;
     width: 85%;
-    height: 200%;
+    height: 800%;
     font-size: 150%;
     font-family: 'Roboto', sans-serif;
     color: #141850;
@@ -293,6 +293,7 @@ footer {
     }
 
     .outputStyle {
+        height: 150%;
         margin:  auto;
         margin-top: 10%;
         
